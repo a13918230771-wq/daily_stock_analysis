@@ -37,6 +37,7 @@ jobs:
     steps:
       - name: 随机延迟（避免固定时间访问）
         run: sleep $((RANDOM % 60))  # 随机延迟0-60秒启动
+        
       - name: Debug Timezone and Current Time
         run: |
           echo "=== 时区与时间调试信息 ==="
@@ -48,6 +49,7 @@ jobs:
           echo "环境变量 TZ (如果设置): $TZ"
           echo "=== 调试信息结束 ==="
           echo ""
+          
       - name: 检出代码
         uses: actions/checkout@v5
       
